@@ -5,7 +5,7 @@
   ];
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
+    #overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
       # https://github.com/nix-community/home-manager/issues/2942

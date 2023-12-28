@@ -24,11 +24,6 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # SFMono w/ patches
-    sf-mono-liga-src = {
-      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
-      flake = false;
-    };
   };
 
   outputs = inputs@{self, nixpkgs, hyprland, home-manager, ...}:
@@ -58,10 +53,10 @@
     in
     {
 
-      overlays = import ./overlays { inherit inputs outputs; };
-      packages = pkgsForEachSystem (pkgs: import ./pkgs { inherit pkgs; });
-      devShells = pkgsForEachSystem (pkgs: import ./shell.nix { inherit inputs pkgs; });
-      formatter = forAllSystems (pkgs: pkgs.nixpkgs-fmt);
+      #overlays = import ./overlays { inherit inputs outputs; };
+      #packages = pkgsForEachSystem (pkgs: import ./pkgs { inherit pkgs; });
+      #devShells = pkgsForEachSystem (pkgs: import ./shell.nix { inherit inputs pkgs; });
+      #formatter = forAllSystems (pkgs: pkgs.nixpkgs-fmt);
 
       nixosConfigurations = {
         ## Laptop Zbook
@@ -88,7 +83,7 @@
         #  extraSpecialArgs = { inherit inputs outputs; };
         #};
         "olivier@scadrial" = lib.homeManagerConfiguration {
-          modules = [ ./home/scadrial/scadrial.nix ];
+          modules = [ ./home/olivier/scadrial.nix ];
           pkgs = pkgsForSystem.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };

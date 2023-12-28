@@ -90,7 +90,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # nix.extraOptions = "secret-key-files = /home/claeff/nix/nix-configs/nixos/hosts/hera/hera-cache-priv-key.pem";
+  nix.extraOptions = "secret-key-files = /home/olivier/nix/nixos-config/nixos/hosts/scadrial/scadrial-cache-priv-key.pem";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
