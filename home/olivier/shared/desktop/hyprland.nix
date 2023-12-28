@@ -13,7 +13,9 @@
     systemd.enable = true;
     # X server running under wayland to provide compatibility with native X11 apps.
     xwayland.enable = true;
-    enableNvidiaPatches = true;
+
+    # enableNvidiaPatches option has been removed
+    # enableNvidiaPatches = true;
     extraConfig = builtins.readFile ./hyprland.conf;
   };
 }
